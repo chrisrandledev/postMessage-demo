@@ -5,14 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>iframePage</title>
-  </head>
-  <body style="border: 5px solid #333">
-    <h1>this is iframePage</h1>
-
     <script>
-      //
-      parent.postMessage({ msg: 'MessageFromIframePage' }, '*');
-
+      function DoScroll2() {
+        //
+        parent.postMessage({ msg: 'MessageFromIframePage' }, '*');
+      }
+    </script>
+  </head>
+  <body style="border: 5px solid #333; height: 1000px">
+    <h1>this is the iframePage</h1>
+    <button onclick="DoScroll2()">Scroll Me!</button>
+    <script>
       //
       function receiveMessageFromIndex(event) {
         console.log('receiveMessageFromIndex', event);

@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>index</title>
+    <script tyle="text/javascript">
+      function DoScroll() {
+        document.getElementById('myframe').contentWindow.scrollTo(0, 1000);
+      }
+    </script>
   </head>
   <body style="border: 5px solid #333">
     <h1>this is the index</h1>
-
     <iframe src="./iframePage.html" id="myframe"></iframe>
+    <button onclick="DoScroll() ">Scroll Iframe Downs</button>
 
     <script>
       // iframe
@@ -29,6 +34,7 @@
       //
       function receiveMessageFromIframePage(event) {
         console.log('receiveMessageFromIframePage', event);
+        DoScroll();
       }
 
       // message
